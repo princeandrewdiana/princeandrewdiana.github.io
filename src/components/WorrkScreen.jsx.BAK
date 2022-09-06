@@ -1,0 +1,78 @@
+import React, {useState, useEffect} from 'react';
+import { Parallax } from 'react-scroll-parallax';
+import OvcodeMockup1 from '../assets/work/ovcode/ovcode-1.png';
+import OvcodeMockup2 from '../assets/work/ovcode/ovcode-2.png';
+import OvcodeMockup3 from '../assets/work/ovcode/ovcode-3.png';
+import OvcodeMockup4 from '../assets/work/ovcode/ovcode-4.png';
+
+const WorkScreen = () => {
+
+    const [progress, setProgress] = useState(0)
+    const [entered, setEntered] = useState(false)
+
+    return(
+        <>
+
+
+            <div class="flex flex-row">
+
+
+                <Parallax
+                    onProgressChange={(progress) => setProgress(progress)}
+                    onEnter={() => setEntered(true)}
+                    onExit={() => setEntered(false)}
+                >
+                    <img style={{height: '80vh'}} src={OvcodeMockup1} />
+
+                </Parallax>
+
+                <div class="basis-1/2 bg-slate-500">
+                    <h1 className="text-3xl font-bold underline">
+                        OVCODE
+                    </h1>
+                </div>
+                
+                <div class="basis-1/2 bg-red-100">
+
+                    <div class="flex flex-row">
+
+                        <div class="basis-1/2">
+                            <Parallax speed={10} translateX={['-100px', '200px']}>
+                                <img style={{height: '80vh'}} src={OvcodeMockup1} />
+                            </Parallax>
+                        </div>
+
+                        <div class="basis-1/2">
+                            <Parallax speed={25}>
+                                <img style={{height: '80vh'}} src={OvcodeMockup4} />
+                            </Parallax>
+                        </div>
+
+                    </div>
+
+                    <br/><br/><br/><br/>
+
+                    <div class="flex flex-row">
+
+                        <div class="basis-1/2">
+                            <Parallax speed={-10} translateY={[-20, 20]}>
+                                <img style={{height: '80vh'}} src={OvcodeMockup1} />
+                            </Parallax>
+                        </div>
+
+                        <div class="basis-1/2">
+                            <Parallax speed={-10}>
+                                <img style={{height: '80vh'}} src={OvcodeMockup4} />
+                            </Parallax>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </>
+    )
+}
+
+export { WorkScreen };
